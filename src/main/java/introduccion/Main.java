@@ -66,6 +66,7 @@ public class Main {
 
         // ********************************************
 
+        System.out.println("***********************");
         // forma imperativa
         List<Person> people = new ArrayList<>();
         for(Student student: students){
@@ -75,7 +76,18 @@ public class Main {
 
         for(Person person: people){
             System.out.println(person);
-        }    }
+        }
+
+        // forma declarativa
+        System.out.println("Programacion declarativa");
+        students.stream()
+                .map(student ->
+                    new Person(student.name, student.lastName))
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
+
+
+    }
     static class Person{
         private final String firstName;
         private final String lastName;
