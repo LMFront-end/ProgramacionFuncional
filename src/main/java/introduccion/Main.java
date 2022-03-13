@@ -63,6 +63,37 @@ public class Main {
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
 
+
+        // ********************************************
+
+        // forma imperativa
+        List<Person> people = new ArrayList<>();
+        for(Student student: students){
+            Person person = new Person(student.name, student.lastName);
+            people.add(person);
+        }
+
+        for(Person person: people){
+            System.out.println(person);
+        }    }
+    static class Person{
+        private final String firstName;
+        private final String lastName;
+        //private final String email;
+
+        public Person(String firstName, String lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            //this.email = email;
+        }
+
+        @Override
+        public String toString() {
+            return "Person{" +
+                    "firstName='" + firstName + '\'' +
+                    ", lastName='" + lastName + '\'' +
+                    '}';
+        }
     }
 
 
