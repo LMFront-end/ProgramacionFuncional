@@ -13,7 +13,6 @@ public class Main {
         // programación imperativa -> es decir, como una secuencia de operaciones a realizar.
         // programación declarativa -> es decir, se especifica el resultado deseado, no cómo lograrlo.
 
-        // forma declarativa
         List<Student> students = List.of(
             new Student("Lina", "Guerrero", 23, FEMALE),
             new Student("Mateo", "Vlad", 25, MALE),
@@ -53,6 +52,14 @@ public class Main {
                 // expresión lambda
                 .filter(student ->  MALE.equals(student.gender))
                 // colección
+                .collect(Collectors.toList())
+                // imprima el elemento que estoy iterando
+                .forEach(System.out::println);
+
+        System.out.println("*************");
+
+        // generar una lista de solo mujeres
+        students.stream().filter(student -> FEMALE.equals(student.gender))
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
 
