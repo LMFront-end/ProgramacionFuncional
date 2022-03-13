@@ -1,5 +1,6 @@
 package introduccion;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static introduccion.Main.Gender.FEMALE;
@@ -24,9 +25,24 @@ public class Main {
         // forma imperativa
         for (Student student: students){
             // se deja a la izquierda el valor fijo, no el variable
+
+            // imprimir todos los hombres de la lista
             if(MALE.equals(student.gender)){
                 System.out.println(student);
             }
+        }
+
+        List<Student> females = new ArrayList<>();
+        for (Student student: students){
+            // se deja a la izquierda el valor fijo, no el variable
+            // imprimir todos los hombres de la lista
+            if(FEMALE.equals(student.gender)){
+                females.add(student);
+            }
+        }
+
+        for(Student student: females){
+            System.out.println(student);
         }
     }
 
