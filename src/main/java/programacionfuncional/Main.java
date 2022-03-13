@@ -17,12 +17,14 @@ public class Main {
 
         // 2. - Quedarme solo con los pares
         List<Integer> pares = filtrarPares(numeros);
+
         // 3. - Pasar cada número al cuadrado
         // 4. - Mostrar cada cuadrado por pantalla
-        // 5. - Obtener la suma de los cuadrados
+        List<Integer> cuadrado = cuadradoNumeros(numeros);
 
 
     }
+
 
     private List<Integer> crearLista(){
         // List.of -> me construye una lista inmutable
@@ -38,6 +40,15 @@ public class Main {
         return numeros;
     }
 
+    // elevar al cuadrado
+    private List<Integer> cuadradoNumeros(List<Integer> numeros) {
+        numeros.stream()
+                .map(numero -> Math.floor(Math.pow(numero, 2)))
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
+
+        return  numeros;
+    }
 
 
 
