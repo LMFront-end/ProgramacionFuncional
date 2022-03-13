@@ -2,6 +2,7 @@ package introduccion;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static introduccion.Main.Gender.FEMALE;
 import static introduccion.Main.Gender.MALE;
@@ -40,10 +41,21 @@ public class Main {
                 females.add(student);
             }
         }
-
+        System.out.println("Estudiantes mujeres: \n" );
         for(Student student: females){
             System.out.println(student);
         }
+
+        //forma declarativa
+        System.out.println("Programación declarativa");
+
+        students.stream()
+                // expresión lambda
+                .filter(student ->  MALE.equals(student.gender))
+                // colección
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
+
     }
 
 
